@@ -3,8 +3,10 @@ import axios from "axios";
 const containerVideos = document.querySelector(".videos__container");
 
 async function buscarEMostrarVideos() {
+  let urlVideos = import.meta.env.VITE_URL_VIDEOS || "http://localhost:3000/videos";
+
   try {
-    const busca = await axios.get("http://localhost:3000/videos");
+    const busca = await axios.get(urlVideos);
 
     const videos = busca.data;
 
